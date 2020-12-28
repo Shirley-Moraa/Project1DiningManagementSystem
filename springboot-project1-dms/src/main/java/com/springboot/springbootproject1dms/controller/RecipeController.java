@@ -26,7 +26,7 @@ import com.springboot.springbootproject1dms.repository.RecipeRepository;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController 
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v2")
 public class RecipeController {
 	
 	@Autowired
@@ -52,6 +52,7 @@ public class RecipeController {
     
     @PostMapping("/recipes")
     public Recipe createRecipe(@Validated @RequestBody Recipe recipe) {
+    	System.out.println("RRRRRRRRRRRRRRRRRRRR" + recipe);
         return recipeRepository.save(recipe);
     }
     
@@ -64,8 +65,8 @@ public class RecipeController {
         recipe.setTitle(recipeDetails.getTitle());
         recipe.setCost(recipeDetails.getCost());
         recipe.setContainsGluten(recipeDetails.isContainsGluten());
-        recipe.setContainsPeanuts(recipeDetails.isContainsPeanuts());
-        recipe.setCost(recipeDetails.getCost());
+        recipe.setContainsPeanut(recipeDetails.isContainsPeanut());
+        recipe.setIngredients(recipeDetails.getIngredients());
         final Recipe updatedRecipe = recipeRepository.save(recipe);
         return ResponseEntity.ok(updatedRecipe);
        

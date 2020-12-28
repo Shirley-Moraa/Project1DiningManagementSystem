@@ -51,6 +51,7 @@ public class SeniorController {
     
     @PostMapping("/seniors")
     public Senior createSenior(@Validated @RequestBody Senior senior) {
+    	System.out.println("RRRRRRRRRRRRRRRRRRRR" + senior);
         return seniorRepository.save(senior);
     }
 
