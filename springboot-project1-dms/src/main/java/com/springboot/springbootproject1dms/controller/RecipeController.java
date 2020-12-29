@@ -30,10 +30,10 @@ import com.springboot.springbootproject1dms.repository.RecipeRepository;
 public class RecipeController {
 	
 	@Autowired
-	private RecipeRepository recipeRepository;
+	private static RecipeRepository recipeRepository;
 	
 	@GetMapping("/recipes")
-	public List<Recipe> getAllRecipes(){
+	public static List<Recipe> getAllRecipes(){
 		return recipeRepository.findAll();
 	}
 	

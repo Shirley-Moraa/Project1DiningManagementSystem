@@ -3,15 +3,9 @@ package com.springboot.springbootproject1dms.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.springboot.springbootproject1dms.model.Recipe;
+import com.springboot.springbootproject1dms.model.Menu;
 
 @Repository
-public interface RecipeRepository extends JpaRepository<Recipe, Long>{
-    
+public interface MenuRepository extends JpaRepository<Menu, Long>{
+
 }
-
-
-
-
-
-
